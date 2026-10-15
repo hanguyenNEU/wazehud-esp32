@@ -89,6 +89,12 @@ Phát dữ liệu Waze mẫu không cần điện thoại: `python3 tools/fake_e
 
 Xem [CONTRIBUTING.md](CONTRIBUTING.md). Giao thức BLE/HLP: [docs/PROTOCOL.md](docs/PROTOCOL.md).
 
+## Ủng hộ dự án
+
+Nếu WazeHUD hữu ích với bạn, có thể ủng hộ tác giả tại
+**[hud.arnoldnguyen.bid/#donate](https://hud.arnoldnguyen.bid/#donate)** ☕
+Mọi đóng góp giúp duy trì website, server cập nhật và phát triển board mới.
+
 ## License
 
 Mã nguồn: [MIT](LICENSE). Font, ảnh, icon giữ license gốc — xem

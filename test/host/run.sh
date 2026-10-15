@@ -28,14 +28,14 @@ fi
 
 mkdir -p "$OUT"
 
-cc -std=c17 -O1 -Wall -Wextra -Werror \
+cc -std=gnu17 -O1 -Wall -Wextra -Werror \
    -I "$ROOT/firmware/main/hlp" -I "$CJSON" \
    "$ROOT/test/host/protocol_test.c" \
    "$ROOT/firmware/main/hlp/hlp_core.c" \
    "$ROOT/firmware/main/hlp/hlp_messages.c" \
    "$CJSON/cJSON.c" -o "$OUT/protocol_test" || exit 1
 "$OUT/protocol_test" || exit 1
-cc -std=c17 -O1 -Wall -Wextra -Werror \
+cc -std=gnu17 -O1 -Wall -Wextra -Werror \
    -I "$ROOT/firmware/main/hlp" -I "$ROOT/firmware/main/app" -I "$CJSON" \
    "$ROOT/test/host/alerts_test.c" \
    "$ROOT/firmware/main/app/hud_alerts.c" \
@@ -44,33 +44,33 @@ cc -std=c17 -O1 -Wall -Wextra -Werror \
 "$OUT/alerts_test" || exit 1
 
 # Ghép mảnh kênh tin 8a7e0012 (thống kê chuyến đi).
-cc -std=c17 -O1 -Wall -Wextra -Werror \
+cc -std=gnu17 -O1 -Wall -Wextra -Werror \
    -I "$ROOT/firmware/main/app" \
    "$ROOT/test/host/msg_asm_test.c" \
    "$ROOT/firmware/main/app/msg_asm.c" -o "$OUT/msg_asm_test" || exit 1
 "$OUT/msg_asm_test" || exit 1
 
 # Bộ test mới cho kiến trúc UI: gesture, lịch âm, đồng hồ, cấu hình.
-cc -std=c17 -O1 -Wall -Wextra -Werror \
+cc -std=gnu17 -O1 -Wall -Wextra -Werror \
    -I "$ROOT/firmware/main/system" \
    "$ROOT/test/host/gesture_test.c" -o "$OUT/gesture_test" || exit 1
 "$OUT/gesture_test" || exit 1
-cc -std=c17 -O1 -Wall -Wextra -Werror \
+cc -std=gnu17 -O1 -Wall -Wextra -Werror \
    -I "$ROOT/firmware/main/system" \
    "$ROOT/test/host/lunar_test.c" -o "$OUT/lunar_test" || exit 1
 "$OUT/lunar_test" || exit 1
-cc -std=c17 -O1 -Wall -Wextra -Werror \
+cc -std=gnu17 -O1 -Wall -Wextra -Werror \
    -I "$ROOT/test/host" -I "$ROOT/firmware/main/system" \
    "$ROOT/test/host/clock_test.c" -o "$OUT/clock_test" || exit 1
 "$OUT/clock_test" || exit 1
-cc -std=c17 -O1 -Wall -Wextra -Werror \
+cc -std=gnu17 -O1 -Wall -Wextra -Werror \
    -I "$ROOT/test/host" -I "$ROOT/firmware/main/hlp" \
    -I "$ROOT/firmware/main/app" -I "$CJSON" \
    "$ROOT/test/host/config_test.c" "$CJSON/cJSON.c" -o "$OUT/config_test" || exit 1
 "$OUT/config_test" || exit 1
 
 echo "── biên dịch"
-cc -std=c17 -O1 -Wall -Wextra -Werror \
+cc -std=gnu17 -O1 -Wall -Wextra -Werror \
    -I "$ROOT/firmware/main/hlp" \
    -I "$ROOT/firmware/main/app" \
    -I "$CJSON" \
