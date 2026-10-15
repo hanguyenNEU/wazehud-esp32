@@ -8,6 +8,13 @@ WazeHUDProbe / Waze Mod trên iPhone) bằng BLE.
 > turn-by-turn data over BLE (HLP/1 protocol). MIT licensed. Contributions for
 > new boards and UI themes are welcome — see [CONTRIBUTING.md](CONTRIBUTING.md).*
 
+> [!IMPORTANT]
+> 🌐 **Website chính thức của dự án: [hud.arnoldnguyen.bid](https://hud.arnoldnguyen.bid)**
+>
+> Giới thiệu, nạp firmware một chạm qua trình duyệt, hướng dẫn cài tweak và tải bản mới nhất.
+> Đây là kênh phát hành chính thức duy nhất cùng với repo này. Hãy cẩn thận với các trang
+> khác tự nhận là WazeHUD.
+
 > Dự án độc lập, không liên kết với Waze / Google. Tên chỉ dùng để mô tả khả năng
 > tương thích — xem [DISCLAIMER.md](DISCLAIMER.md). Chỉ cấu hình khi xe đã dừng đỗ.
 
@@ -26,6 +33,17 @@ WazeHUDProbe / Waze Mod trên iPhone) bằng BLE.
 | LCDwiki ES3C28P (ESP32-S3 N16R8) | 2.8" ILI9341 320×240 SPI | FT6336G | ✅ Chính thức |
 
 Muốn thêm board? Xem [docs/PORTING.md](docs/PORTING.md).
+
+## Cài đặt nhanh (không cần build)
+
+1. **Nạp qua trình duyệt:** mở [hud.arnoldnguyen.bid/#download](https://hud.arnoldnguyen.bid/#download)
+   bằng Chrome/Edge trên máy tính, cắm board qua USB-C rồi bấm nút nạp.
+2. **Hoặc tải file từ [Releases](../../releases):** nạp `…-full.bin` ở địa chỉ `0x0`
+   bằng [ESP Web Flasher](https://espressif.github.io/esptool-js/) hoặc `esptool.py`.
+3. **Cập nhật về sau:** qua WiFi SoftAP của HUD, dùng file `…-ota.bin`.
+
+Bản trên website là bản chính thức, có sẵn cập nhật qua Internet. Bản tự build từ repo
+này mặc định tắt tính năng đó (xem [Cấu hình](#cấu-hình)).
 
 ## Cấu trúc
 
