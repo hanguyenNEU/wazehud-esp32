@@ -1,0 +1,58 @@
+{
+ "P125": {
+  "file": "P125.png",
+  "source": "https://commons.wikimedia.org/wiki/File:Vietnam_road_sign_P.125_(QCVN_41-2019-BGTVT).svg",
+  "license": "Public domain",
+  "author": "Government of Vietnam",
+  "hlp_alert": 9,
+  "vi": "cấm vượt"
+ },
+ "P101": {
+  "file": "P101.png",
+  "source": "https://commons.wikimedia.org/wiki/File:Vietnam_road_sign_P101.svg",
+  "license": "Public domain",
+  "author": "Government of Vietnam",
+  "hlp_alert": 7,
+  "vi": "đường cấm"
+ },
+ "W210": {
+  "file": "W210.png",
+  "source": "https://commons.wikimedia.org/wiki/File:Vietnam_road_sign_W210.svg",
+  "license": "Public domain",
+  "author": "Government of Vietnam",
+  "hlp_alert": 11,
+  "vi": "giao nhau đường sắt có rào"
+ },
+ "W211a": {
+  "file": "W211a.png",
+  "source": "https://commons.wikimedia.org/wiki/File:Vietnam_road_sign_W211a.svg",
+  "license": "Public domain",
+  "author": "Government of Vietnam",
+  "hlp_alert": 11,
+  "vi": "giao nhau đường sắt không rào"
+ },
+ "W245a": {
+  "file": "W245a.png",
+  "source": "https://commons.wikimedia.org/wiki/File:Vietnam_road_sign_W245a.svg",
+  "license": "Public domain",
+  "author": "Government of Vietnam",
+  "hlp_alert": 6,
+  "vi": "đi chậm"
+ },
+ "W247": {
+  "file": "W247.png",
+  "source": "https://commons.wikimedia.org/wiki/File:Vietnam_road_sign_W247.svg",
+  "license": "Public domain",
+  "author": "Government of Vietnam",
+  "hlp_alert": 13,
+  "vi": "chú ý xe đỗ"
+ },
+ "DP127a": {
+  "file": "DP127a.png",
+  "source": "https://commons.wikimedia.org/wiki/File:Vietnam_road_sign_DP127a.svg",
+  "license": "Public domain",
+  "author": "Government of Vietnam",
+  "hlp_alert": 8,
+  "vi": "hết hạn chế tốc độ tối đa"
+ }
+}

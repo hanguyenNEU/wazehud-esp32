@@ -1,0 +1,17 @@
+menu "HUD community"
+
+    config HUD_OTA_MANIFEST_URL
+        string "URL ota.json cho cập nhật qua Internet"
+        default ""
+        help
+            Để trống = tắt Cài đặt › Kiểm tra cập nhật. Mỗi bản fork/board
+            phải trỏ tới server riêng, tránh OTA nhầm firmware của board khác.
+            Định dạng: {"version":"0.2.0","url":"https://…/fw-ota.bin","notes":"…"}
+
+    config HUD_AP_PASSWORD
+        string "Mật khẩu WiFi SoftAP (cập nhật firmware / cấu hình WiFi)"
+        default "wazehud1234"
+        help
+            WPA2 cần tối thiểu 8 ký tự. Nên đổi khi build bản phát hành.
+
+endmenu

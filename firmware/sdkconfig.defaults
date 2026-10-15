@@ -1,0 +1,80 @@
+# LCDwiki ES3C28P — ESP32-S3 N16R8: 16 MB flash, 8 MB PSRAM octal.
+
+CONFIG_IDF_TARGET="esp32s3"
+
+# --- Bluetooth: NimBLE, BLE-only ---------------------------------------------
+# ESP32-S3 KHÔNG có Bluetooth Classic, nên chỉ có đúng một lựa chọn là BLE.
+# Các symbol CONFIG_BTDM_CTRL_* trong ví dụ của SDK là dành cho ESP32 đời đầu,
+# trên S3 chúng không tồn tại.
+CONFIG_BT_ENABLED=y
+CONFIG_BT_NIMBLE_ENABLED=y
+CONFIG_BT_BLUEDROID_ENABLED=n
+CONFIG_BT_NIMBLE_ROLE_PERIPHERAL=y
+CONFIG_BT_NIMBLE_ROLE_BROADCASTER=y
+CONFIG_BT_NIMBLE_ROLE_CENTRAL=n
+CONFIG_BT_NIMBLE_ROLE_OBSERVER=n
+# 2 central: tweak Waze (HLP) + app CarDash trên iPhone chính (GPS).
+CONFIG_BT_NIMBLE_MAX_CONNECTIONS=2
+# Android yêu cầu ATT MTU 247 nhưng phải chạy được cả ở 23 (§8).
+CONFIG_BT_NIMBLE_ATT_PREFERRED_MTU=247
+CONFIG_BT_NIMBLE_SVC_GAP_DEVICE_NAME="WazeHUD"
+
+# --- Flash & PSRAM ------------------------------------------------------------
+CONFIG_ESPTOOLPY_FLASHSIZE_16MB=y
+CONFIG_ESPTOOLPY_FLASHMODE_QIO=y
+CONFIG_ESPTOOLPY_FLASHFREQ_80M=y
+# --- PSRAM: bật, nhưng chỉ cấp phát khi gọi tường minh -----------------------
+# Bộ đệm vẽ LVGL vẫn ở SRAM trong (DMA), font vẫn là rodata trong flash. PSRAM
+# chỉ dùng cho thứ gọi heap_caps_malloc(MALLOC_CAP_SPIRAM) — hiện là khung ảnh
+# nền động của màn CLOCK (ui/anim_bg.c, 150 KB, không vừa SRAM trong).
+# USE_CAPS_ALLOC: malloc() thường KHÔNG rơi sang PSRAM, hành vi cũ giữ nguyên.
+#
+# Module N16R8 → PSRAM chế độ OCTAL. IGNORE_NOTFOUND: PSRAM lỗi thì vẫn boot,
+# anim_bg tự lùi về ảnh tĩnh.
+CONFIG_SPIRAM=y
+CONFIG_SPIRAM_MODE_OCT=y
+CONFIG_SPIRAM_SPEED_80M=y
+CONFIG_SPIRAM_USE_CAPS_ALLOC=y
+CONFIG_SPIRAM_IGNORE_NOTFOUND=y
+# Bật PSRAM tốn thêm SRAM trong (cache/MMU) — BLE hết chỗ tạo task. Đẩy bộ
+# nhớ của NimBLE host và WiFi/LWIP sang PSRAM cho SRAM trong thở.
+CONFIG_BT_NIMBLE_MEM_ALLOC_MODE_EXTERNAL=y
+CONFIG_SPIRAM_TRY_ALLOCATE_WIFI_LWIP=y
+# TLS (HTTPS) cần ~40 KB mỗi phiên — SRAM trong không còn đủ
+# (mbedtls_ssl_setup -0x008D), cấp phát từ PSRAM.
+CONFIG_MBEDTLS_EXTERNAL_MEM_ALLOC=y
+
+CONFIG_PARTITION_TABLE_CUSTOM=y
+CONFIG_PARTITION_TABLE_CUSTOM_FILENAME="partitions.csv"
+
+# --- Console qua USB gốc của S3 ----------------------------------------------
+# Board chỉ có một cổng USB-C nối thẳng vào USB-Serial/JTAG của chip.
+CONFIG_ESP_CONSOLE_USB_SERIAL_JTAG=y
+
+CONFIG_FREERTOS_HZ=1000
+CONFIG_ESP_MAIN_TASK_STACK_SIZE=6144
+CONFIG_COMPILER_OPTIMIZATION_PERF=y
+
+# --- OTA ----------------------------------------------------------------------
+# Bản mới khởi động ở trạng thái PENDING_VERIFY; nếu không tự xác nhận là tốt
+# trong lần chạy đó thì bootloader lùi về bản cũ ở lần khởi động sau.
+CONFIG_BOOTLOADER_APP_ROLLBACK_ENABLE=y
+CONFIG_ESP_HTTPS_OTA_ALLOW_HTTP=y
+CONFIG_HTTPD_MAX_REQ_HDR_LEN=1024
+
+# --- LVGL ---------------------------------------------------------------------
+# Bật bộ giải mã GIF cho hoạt ảnh chào mừng lúc khởi động.
+CONFIG_LV_USE_GIF=y
+# Font PuHuiTi 20px (heylily-fw) có bitmap > 1MB — cần bitmap_index 32-bit.
+CONFIG_LV_FONT_FMT_TXT_LARGE=y
+# Cập nhật firmware qua Internet (net/ota_online.c): bộ CA phổ biến là đủ cho
+# trang WazeHUD trên Cloudflare, nhẹ hơn bộ đầy đủ — app còn ít chỗ trống.
+CONFIG_MBEDTLS_CERTIFICATE_BUNDLE_DEFAULT_CMN=y
+# Cloudflare gửi kèm GTS Root R4 bản ký chéo bởi GlobalSign Root CA (R1, không
+# có trong bundle) → mặc định báo "No matching trusted root". Bật để tìm root
+# theo issuer từng chứng chỉ: WE1 → GTS Root R4 (có trong bundle) là đủ.
+CONFIG_MBEDTLS_CERTIFICATE_BUNDLE_CROSS_SIGNED_VERIFY=y
+# NTP (net/ntp_sync.c): 3 server dự phòng, gửi ngay khi có IP thay vì trễ
+# ngẫu nhiên tới 5 giây.
+CONFIG_LWIP_SNTP_MAX_SERVERS=3
+# CONFIG_LWIP_SNTP_STARTUP_DELAY is not set

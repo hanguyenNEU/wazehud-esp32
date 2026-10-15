@@ -1,0 +1,9 @@
+# Name,     Type, SubType, Offset,   Size
+# Bố cục OTA: hai vùng app luân phiên. Đang chạy ở ota_0 thì tải bản mới vào
+# ota_1, đổi cờ trong otadata rồi reboot; bản mới lỗi thì tự lùi lại.
+nvs,        data, nvs,     0x9000,   24K
+otadata,    data, ota,     0xf000,   8K
+phy_init,   data, phy,     0x11000,  4K
+ota_0,      app,  ota_0,   0x20000,  3M
+ota_1,      app,  ota_1,   0x320000, 3M
+storage,    data, spiffs,  0x620000, 1M

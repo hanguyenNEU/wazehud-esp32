@@ -1,0 +1,28 @@
+# Build
+firmware/build/
+firmware/managed_components/
+firmware/sdkconfig
+firmware/sdkconfig.old
+sim/build/
+test/host/build/
+*.bin
+*.elf
+*.map
+
+# Python / công cụ
+.venv/
+__pycache__/
+tools/captures/
+tools/device-dump/
+tools/routes/
+
+# Dữ liệu cá nhân — không commit GPS trace / log thiết bị
+*.log
+sim/case_drive_*.jsonl
+sim/shots/
+
+# Hệ điều hành / editor
+.DS_Store
+.vscode/
+.idea/
+.env*

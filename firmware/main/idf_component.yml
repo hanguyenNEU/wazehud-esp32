@@ -1,0 +1,17 @@
+dependencies:
+  idf:
+    version: ">=5.5"
+  # esp_lvgl_port lo phần cấp phát buffer, task LVGL và cầu nối tới esp_lcd,
+  # nên không phải tự viết lv_display_flush_cb và tự đồng bộ khoá.
+  espressif/esp_lvgl_port:
+    version: "^2"
+  # Driver ILI9341 chính thức của Espressif — màn của ES3C28P.
+  espressif/esp_lcd_ili9341:
+    version: "^2"
+  # cJSON: IDF 6.x đã gỡ component `json` khỏi IDF, giờ lấy từ registry
+  # với tên mới là `cjson`.
+  espressif/cjson:
+    version: "^1.7.19"
+  # Giải JPEG ảnh nền do app gửi lên (TJpgDec, có sẵn trong ROM của S3).
+  espressif/esp_jpeg:
+    version: "^1"

@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  firmware:
+    runs-on: ubuntu-latest
+    container: espressif/idf:v6.1
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build firmware (ES3C28P)
+        shell: bash
+        working-directory: firmware
+        run: |
+          . $IDF_PATH/export.sh
+          idf.py set-target esp32s3
+          idf.py build
+      - name: Test host
+        shell: bash
+        working-directory: test/host
+        run: ./run.sh
+      - uses: actions/upload-artifact@v4
+        with:
+          name: firmware-es3c28p
+          path: |
+            firmware/build/*.bin
+            firmware/build/bootloader/bootloader.bin
+            firmware/build/partition_table/partition-table.bin

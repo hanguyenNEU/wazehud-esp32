@@ -1,0 +1,22 @@
+{"v":1,"t":"s","nav":1,"spd":47,"lim":50,"over":0,"trn":8,"trn2":2,"dst":47,"exit":0,"lan":[[5,4],[1,1],[17,16]],"st":"Nguyễn Trãi","st2":"Khuất Duy Tiến","eta":"20:01","rmin":23,"rm":6742,"rkm":6.7,"avg":0,"alr":2,"alrD":300,"alrs":[{"k":2,"d":300},{"k":8,"d":800,"v":40}],"ts":124890}
+{"v":1,"t":"s","spd":0,"lim":50,"ts":1}
+{"v":1,"t":"s","ts":2}
+{"v":1,"t":"s","st":"Nguyễn Trãi","ts":3}
+{"v":1,"t":"s","trn":42,"trn2":99,"alr":61,"alrD":500,"ts":4}
+{"v":1,"t":"s","trn":19,"exit":3,"dst":250,"ts":5}
+{"v":1,"t":"s","rkm":6.7,"rmin":12,"ts":6}
+{"v":1,"t":"s","rm":1234,"rkm":9.9,"ts":7}
+{"v":1,"t":"s","lan":[],"alrs":[],"ts":8}
+{"v":1,"t":"s","alrs":[{"k":8,"d":250,"v":40},{"k":1,"d":900}],"ts":9}
+{"v":1,"t":"s","alrs":[{"k":1,"d":100},{"k":2,"d":200},{"k":3,"d":300},{"k":4,"d":400},{"k":5,"d":500},{"k":6,"d":600},{"k":7,"d":700}],"lan":[[1,1],[1,1],[1,1],[1,1],[1,1],[1,1],[1,1],[1,1],[1,1],[1,1],[1,1],[1,1],[1,1],[1,1],[1,1],[1,1],[1,1],[1,1],[1,1],[1,1]],"ts":10}
+{"v":1,"t":"s","avg":1,"avgL":1400,"avgR":58,"avgP":37,"lim":60,"ts":11}
+{"v":1,"t":"s","st":"Đường ệệệệệệệệệệệệệệệệệệệệệệệệệệệệệệệệệệệệệệệệệệệệệệệệệệệệệệệệệệệệ","st2":"ọọọọọọọọọọọọọọọọọọọọọọọọọọọọọọọọọọọọọọọọọọọọọọọọọọ","ts":12}
+{"v":1,"t":"ping","ts":1046540208}
+{"v":1,"t":"hi","sess":48213,"rate":4}
+{"v":1,"t":"cfg_begin","rev":7,"count":2}
+{"v":2,"t":"s","spd":999,"ts":13}
+{"v":1,"t":"s","spd":
+{"v":1,"t":"s","st":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","ts":14}
+{"v":1,"t":"s","spd":55,"ts":15}
+{"v":1,"t":"s","st":"��","ts":16}
+{"v":1,"t":"s","nav":1,"spd":61,"lim":80,"trn":5,"dst":900,"st":"CT.HCM - Long Thành - Dầu Giây","st2":"Quốc lộ 51","eta":"20:18","rmin":6,"rm":1800,"ts":17}
