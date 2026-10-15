@@ -19,8 +19,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
----
-Font, ảnh và icon của bên thứ ba trong firmware/main/ui/assets/ và assets/ giữ
-license gốc, KHÔNG thuộc MIT ở trên — xem THIRD_PARTY_NOTICES.md. Bitmap cảnh
-báo HUD (hud_alert_bitmaps.c) là tự vẽ và thuộc MIT.
